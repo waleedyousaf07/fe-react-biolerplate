@@ -41,11 +41,6 @@
 		],
 		"react/jsx-props-no-spreading": "off",
 		"react/jsx-one-expression-per-line": "off",
-		"react/jsx-curly-newline": "off",
-		"jest/no-disabled-tests": "warn",
-		"jest/no-focused-tests": "error",
-		"jest/no-identical-title": "error",
-		"jest/prefer-to-have-length": "warn",
-		"jest/valid-expect": "error"
+		"react/jsx-curly-newline": "off"
 	}
 }
