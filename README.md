@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# ReacJS Biolerplate
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction:
 
-## Available Scripts
+A ReactJS biolerplate
+
+## Stack (Tools and Technologies):
+
+- Technologies:
+  - <b>ReactJS</b> - Main UI Library
+  - <b>Javascript</b> - Scripting language
+  - <b>HTML</b> - Structuring the webpages
+  - <b>CSS</b> - Styling the webpages
+  - <b>SAAS (SCSS)</b> - Preprocessor for CSS
+  - <b>Redux Toolkit</b> - State management
+  - <b>React Query</b> - Server query/state
+  - <b>React Testing Library</b> - Test cases
+  - <b>ESLint</b> - Linter
+  - <b>Husky</b> - Pre commit hooks
+
+- Tools:
+  - <b>VS Code</b> - IDE
+  - <b>GitBash</b> - Version Control (emulation layer for Git command line interface on windows)
+  - <b>Chrome</b> - Web Browser (others can also be used like Chrome, Safari, Firefox)
+
+## Setup:
+
+Install NodeJS from the official website and verify if its installed by:
+
+    node --version
 
 In the project directory, you can run:
 
-### `npm start`
+    npm install
 
-Runs the app in the development mode.\
+This will install all the dev dependencies defined in the `package.json` file. Then run:
+
+    npm start
+
+Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The page will reload if you make edits. You will also see any lint errors in the console.
 
-### `npm test`
+<br>
+To launch the test runner in the interactive watch mode, use:
 
-Launches the test runner in the interactive watch mode.\
+    npm test
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+<br>
+To build the app for production, use:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    npm run build
+It builds the app for production to the `build` folder and correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.
+
+<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### SASS/SCSS
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In order to use the SAAS/SCSS, we need to install node sass by:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    npm install node-sass
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br>
 
-## Learn More
+### ESlint
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To setup linter i.e. ESlint, we need to first install it if its not already installed by
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    npm install -g eslint
 
-### Code Splitting
+Now initialize ESlint in the app by running:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    eslint --init
 
-### Analyzing the Bundle Size
+#### Note: Refer to .eslintrc.json to complete the eslint configs if facing any errors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br>
 
-### Making a Progressive Web App
+### Pre Commit Hooks (Husky)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Now install husky to run pre commit, pre push etc. hooks by:
 
-### Advanced Configuration
+    npm install husky --save-dev
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Then in `package.json` -> `scripts`, add
 
-### Deployment
+	...
+	"prepare": "husky install",
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Then run it by:
 
-### `npm run build` fails to minify
+	npm run prepare
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Now for adding a pre commit hook, run:
+
+	npx husky add .husky/pre-commit "npm test"
+
+This will create a `.husky` directory with a pre-commit file where we can add the scripts which we want to run before a commit, we can add lint scripts as well
+
+	npm run lint
+
+In `package.json`, update the scripts with:
+
+	...
+	"test": "CI=true react-scripts test",
+	"lint": "eslint ./src --ext .js,.jsx",
+	...
+
+Now add all the files and commit, the pre commits will run and will only allow to commit if they are passed
+
+<br>
+
+### Redux Toolkit
+
+To install redux toolkit, run:
+
+	npm install @reduxjs/toolkit react-redux
