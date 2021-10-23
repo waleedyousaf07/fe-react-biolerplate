@@ -144,3 +144,13 @@ Add redux logger
     npm i --save redux-logger
 
 now use this in store's `configureStore`
+
+<br>
+
+### React Query
+
+Add React Query for Async state management
+
+    npm i react-query
+
+Now wrap app into `QueryClientProvider` and provide `client`
