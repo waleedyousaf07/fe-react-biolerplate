@@ -124,3 +124,23 @@ Now add all the files and commit, the pre commits will run and will only allow t
 To install redux toolkit, run:
 
 	npm install @reduxjs/toolkit react-redux
+  
+Add and configure the `store`, `rootReducer` and also wrap the `App` component in `Provider` to access the store
+
+<br>
+
+### PropTypes
+
+Add the type checking library
+
+    npm install --save prop-types
+
+<br>
+
+### Redux Logger
+
+Add redux logger
+
+    npm i --save redux-logger
+
+now use this in store's `configureStore`
