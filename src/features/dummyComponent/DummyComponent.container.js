@@ -1,19 +1,8 @@
 import { connect } from 'react-redux';
 import DummyComponent from './DummyComponent.view';
-import {
-  decrement,
-  increment,
-  incrementByAmount,
-} from './dummyComponent.slice';
 
-const mapStateToProps = (state) => ({
-  counter: state.dummyComponent.counter,
-});
+const mapStateToProps = () => ({});
 
-const mapDispatchToProps = (dispatch) => ({
-  increment: () => dispatch(increment()),
-  decrement: () => dispatch(decrement()),
-  incrementByAmount: (amount) => dispatch(incrementByAmount(amount)),
-});
+const mapDispatchToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(DummyComponent);

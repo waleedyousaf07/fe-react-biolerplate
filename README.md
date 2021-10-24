@@ -154,3 +154,11 @@ Add React Query for Async state management
     npm i react-query
 
 Now wrap app into `QueryClientProvider` and provide `client`
+
+<br>
+
+### React Router DOM
+
+Add react router dom for routing
+
+    npm install react-router-dom
